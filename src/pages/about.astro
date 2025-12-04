@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Celestra" description="Learn about Celestra, the premium RSS reader designed for iOS 26">
+  <section class="about-page">
+    <div class="container">
+      <h1>About Celestra</h1>
+      <div class="content">
+        <p class="intro">
+          Celestra is a premium RSS reader designed exclusively for iOS 26,
+          bringing the elegance of Liquid Glass design to your daily reading experience.
+        </p>
+
+        <h2>Our Vision</h2>
+        <p>
+          In an age of algorithmic feeds and attention-grabbing notifications,
+          we believe in returning control to readers. RSS represents the open web—a
+          place where you choose what to read, when to read it, and how to organize your content.
+        </p>
+
+        <h2>Built for iOS 26</h2>
+        <p>
+          Celestra takes full advantage of iOS 26's revolutionary Liquid Glass design system,
+          creating an immersive reading experience that feels native to the platform. Every
+          interaction is crafted with care, from smooth animations to thoughtful typography.
+        </p>
+
+        <h2>Premium & Private</h2>
+        <p>
+          No ads. No tracking. No compromises. Celestra is a one-time purchase that respects
+          your privacy and attention. Your reading habits are yours alone, synced securely
+          via iCloud.
+        </p>
+
+        <div class="cta">
+          <a href="/testflight" class="button">Join the TestFlight Beta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-page {
+    padding: 4rem 2rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .content {
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .intro {
+    font-size: 1.25rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  .cta {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: #6366f1;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .button:hover {
+    background: #4f46e5;
+  }
+</style>
