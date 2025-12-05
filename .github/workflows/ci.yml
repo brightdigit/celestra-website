@@ -50,15 +50,10 @@ jobs:
           name: dist
           path: dist/
 
-      - name: Start server
-        run: |
-          npx http-server dist -p 8080 &
-          sleep 3
-
       - name: Check links
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --verbose --no-progress --accept 200,201,202,203,204,300,301,302,303,304,307,308,429 'http://localhost:8080/**/*.html'
+          args: --verbose --no-progress --accept 200,201,202,203,204,300,301,302,303,304,307,308,429 'dist/**/*.html'
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
