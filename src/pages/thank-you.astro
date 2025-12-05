@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
+
+const betaEmail = import.meta.env.BETA_EMAIL || 'beta@celestr.app';
 ---
 
 <Layout
@@ -8,7 +11,8 @@ import Layout from '../layouts/Layout.astro';
 >
   <div class="thank-you-container">
     <div class="success-icon">
-      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4AA3B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4AA3B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="success-icon-title">
+        <title id="success-icon-title">Success checkmark</title>
         <circle cx="12" cy="12" r="10"></circle>
         <path d="M8 12l2 2 4-4"></path>
       </svg>
@@ -26,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
       <ol>
         <li>
           <strong>Check Your Email</strong><br>
-          Look for a confirmation email from beta@celestr.app
+          Look for a confirmation email from <ObfuscatedEmail email={betaEmail} />
         </li>
         <li>
           <strong>Install TestFlight</strong><br>

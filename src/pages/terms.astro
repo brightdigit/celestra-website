@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 
 const lastUpdated = new Date('2025-12-04');
+const supportEmail = import.meta.env.SUPPORT_EMAIL || 'support@celestr.app';
 const formattedDate = lastUpdated.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -171,7 +173,7 @@ const formattedDate = lastUpdated.toLocaleDateString('en-US', {
       </p>
       <p>
         <strong>Bright Digit, LLC</strong><br>
-        Email: <a href="mailto:support@celestr.app">support@celestr.app</a><br>
+        Email: <ObfuscatedEmail email={supportEmail} /><br>
         Website: <a href="https://celestr.app">https://celestr.app</a>
       </p>
     </section>

@@ -1,0 +1,27 @@
+---
+// Obfuscated email component to prevent bot harvesting
+// Uses base64 encoding with JavaScript decoding on page load
+// Progressive enhancement: works without JS (fallback to mailto link)
+
+interface Props {
+  email: string;
+  subject?: string;
+  displayText?: string;
+  className?: string;
+}
+
+const { email, subject = '', displayText, className = '' } = Astro.props;
+
+// Base64 encode email for obfuscation
+const encoded = Buffer.from(email).toString('base64');
+const display = displayText || email;
+---
+
+<a
+  href={`mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`}
+  class={`obfuscated-email ${className}`}
+  data-encoded={encoded}
+  data-subject={subject}
+>
+  {display}
+</a>

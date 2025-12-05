@@ -29,6 +29,8 @@ const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'celestr.app'
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+    <script src="/scripts/email-obfuscation.js" defer></script>
+    <script src="/scripts/form-validation.js" defer></script>
   </head>
   <body>
     <Header />

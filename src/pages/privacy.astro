@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 
-const lastUpdated = new Date('2025-12-04');
+const lastUpdated = new Date('2025-12-05');
+const privacyEmail = import.meta.env.PRIVACY_EMAIL || 'privacy@celestr.app';
 const formattedDate = lastUpdated.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -86,7 +88,7 @@ const formattedDate = lastUpdated.toLocaleDateString('en-US', {
         <li><strong>Correction</strong>: Request correction of inaccurate information</li>
         <li><strong>Unsubscribe</strong>: Opt out of TestFlight communications at any time</li>
       </ul>
-      <p>To exercise these rights, contact us at <a href="mailto:privacy@celestr.app">privacy@celestr.app</a>.</p>
+      <p>To exercise these rights, contact us at <ObfuscatedEmail email={privacyEmail} />.</p>
     </section>
 
     <section>
@@ -95,6 +97,7 @@ const formattedDate = lastUpdated.toLocaleDateString('en-US', {
       <ul>
         <li><strong>Netlify</strong>: Website hosting and form processing</li>
         <li><strong>Apple TestFlight</strong>: Beta distribution (governed by Apple's privacy policy)</li>
+        <li><strong>Plausible Analytics</strong>: Privacy-friendly website analytics to understand visitor behavior. Plausible does not use cookies, does not collect personal data, and is GDPR/CCPA compliant. Learn more at <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible's Privacy Policy</a></li>
       </ul>
       <p>
         These services have their own privacy policies and data handling practices. We do not control their practices and recommend reviewing their policies.
@@ -120,7 +123,7 @@ const formattedDate = lastUpdated.toLocaleDateString('en-US', {
       <p>If you have questions about this Privacy Policy, please contact us at:</p>
       <p>
         <strong>Bright Digit, LLC</strong><br>
-        Email: <a href="mailto:privacy@celestr.app">privacy@celestr.app</a><br>
+        Email: <ObfuscatedEmail email={privacyEmail} /><br>
         Website: <a href="https://celestr.app">https://celestr.app</a>
       </p>
     </section>
