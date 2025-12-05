@@ -12,6 +12,6 @@
 
 # Forms configuration
 [forms]
-  # Optional: Get email notifications when forms are submitted
-  # [forms.testflight-signup]
-  #   to = "your-email@example.com"
+  # Email notifications when forms are submitted
+  [forms.testflight-signup]
+    to = "beta@celestr.app"

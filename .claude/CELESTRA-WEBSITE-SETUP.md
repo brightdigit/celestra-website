@@ -1051,7 +1051,7 @@ Version 0.2.0 will focus on:
 
 ---
 
-Thank you for being an early tester! Please submit feedback via TestFlight or email beta@celestr.app
+Thank you for being an early tester! Please submit feedback via TestFlight or email leo@brightdigit.com
 ```
 
 ### `netlify.toml`
@@ -1158,7 +1158,7 @@ Add to `netlify.toml`:
 
 ```toml
 [[forms.testflight-signup]]
-  to = "beta@celestr.app"
+  to = "leo@brightdigit.com"
   subject = "New TestFlight Signup"
 ```
 

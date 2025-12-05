@@ -39,21 +39,11 @@
       />
     </div>
 
-    <div class="form-group checkbox">
-      <input
-        type="checkbox"
-        id="ios26"
-        name="ios26"
-        value="yes"
-      />
-      <label for="ios26">I'm running iOS 26 Beta</label>
-    </div>
-
     <button type="submit">Join TestFlight Waitlist</button>
 
     <p class="privacy-note">
       We'll only use your email to send TestFlight invitations.
-      No spam, ever. See our <a href="/privacy">privacy policy</a>.
+      No spam, ever. See our <a href="/privacy">privacy policy</a> and <a href="/terms">terms of service</a>.
     </p>
   </form>
 </div>
@@ -68,12 +58,17 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-align: left;
   }
 
   .form-group.checkbox {
@@ -104,6 +99,7 @@
   input[type="text"]:focus {
     outline: none;
     border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 
   button {
@@ -115,11 +111,12 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
   }
 
   button:hover {
     background: #4f46e5;
+    transform: translateY(-1px);
   }
 
   .privacy-note {
@@ -136,5 +133,11 @@
 
   .privacy-note a:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    form {
+      padding: 2rem;
+    }
   }
 </style>

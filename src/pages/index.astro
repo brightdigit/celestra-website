@@ -1,29 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TestFlightForm from '../components/TestFlightForm.astro';
 ---
 
-<Layout title="Celestra - Premium RSS Reader for iOS 26">
+<Layout title="Celestra - Premium RSS Reader for iOS">
   <section class="hero">
     <div class="container">
       <h1>Your RSS Feeds, Beautifully Reimagined</h1>
       <p class="tagline">
-        Experience the future of RSS reading with iOS 26's Liquid Glass design.
-        Premium, elegant, and built for those who value exceptional design.
+        Experience the future of RSS reading with beautiful, elegant design.
+        Premium, private, and built for those who value exceptional design.
       </p>
-      <div class="cta">
-        <a href="/testflight" class="button primary">Join TestFlight Beta</a>
-        <a href="/about" class="button secondary">Learn More</a>
+      <div class="form-wrapper">
+        <TestFlightForm />
       </div>
     </div>
   </section>
 
   <section class="features">
     <div class="container">
-      <h2>Designed for iOS 26</h2>
+      <h2>Designed for iOS</h2>
       <div class="feature-grid">
         <div class="feature">
-          <h3>Liquid Glass Design</h3>
-          <p>Immersive translucent interfaces that feel native to iOS 26.</p>
+          <h3>Beautiful Design</h3>
+          <p>Immersive interfaces that feel native and delightful to use.</p>
         </div>
         <div class="feature">
           <h3>Offline First</h3>
@@ -36,27 +36,23 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <section class="cta-section">
-    <div class="container">
-      <h2>Be the First to Experience Celestra</h2>
-      <p>Join our TestFlight beta and help shape the future of RSS reading.</p>
-      <a href="/testflight" class="button primary">Sign Up Now</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
   .hero {
-    padding: 6rem 2rem;
+    padding: 4rem 2rem 6rem;
     text-align: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
   }
 
   h1 {
@@ -67,41 +63,16 @@ import Layout from '../layouts/Layout.astro';
 
   .tagline {
     font-size: 1.25rem;
-    margin: 0 0 2rem 0;
+    margin: 0 0 3rem 0;
     opacity: 0.95;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .cta {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-
-  .button:hover {
-    transform: translateY(-2px);
-  }
-
-  .button.primary {
-    background: white;
-    color: #667eea;
-  }
-
-  .button.secondary {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+  .form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .features {
@@ -134,34 +105,22 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.6;
   }
 
-  .cta-section {
-    padding: 6rem 2rem;
-    background: #f9fafb;
-    text-align: center;
-  }
-
-  .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.25rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
-  }
-
   @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 3rem 2rem 4rem;
+    }
+
     h1 {
       font-size: 2rem;
     }
 
     .tagline {
       font-size: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .features h2,
-    .cta-section h2 {
+    .features h2 {
       font-size: 2rem;
     }
   }

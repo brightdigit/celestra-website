@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing website for Celestra, a premium RSS reader for iOS 26. Built with Astro static site generator and deployed on Netlify.
+Marketing website for Celestra, a premium RSS reader for iOS. Built with Astro static site generator and deployed on Netlify.
 
 **Domain**: celestr.app
 **Stack**: Astro + Netlify Forms + Netlify Hosting
-**Purpose**: Marketing site with TestFlight signup and release notes
+**Purpose**: Single-page marketing site with TestFlight signup
 
 ## Development Commands
 
@@ -26,25 +26,6 @@ netlify deploy --prod   # Deploy to production
 
 ## Architecture
 
-### Content Collections
-
-Release notes are managed via Astro's Content Collections API in `src/content/releases/`. Each release is a markdown file with frontmatter:
-
-```typescript
-// Schema defined in src/content/config.ts
-{
-  version: string,      // e.g., "0.1.0"
-  date: Date,
-  title: string,
-  description?: string,
-  featured: boolean     // default false
-}
-```
-
-Dynamic routes:
-- `/releases/` - Lists all releases, sorted by date descending
-- `/releases/[slug]` - Individual release note pages with full markdown rendering
-
 ### Netlify Forms
 
 TestFlight signup uses Netlify Forms with server-side handling. Key patterns:
@@ -58,11 +39,17 @@ To test forms locally: use `netlify dev` (not `npm run dev`) to enable Netlify's
 
 ### Page Structure
 
-- `src/pages/` - File-based routing (index, about, testflight, releases)
+- `src/pages/index.astro` - Single-page site with hero, features, and signup sections
+- `src/pages/privacy.astro` - Privacy Policy (linked from signup form)
+- `src/pages/terms.astro` - Terms of Service (linked from signup form)
 - `src/layouts/Layout.astro` - Base layout with Header/Footer slots
 - `src/components/` - Reusable Astro components (Header, Footer, TestFlightForm)
+- Homepage includes the TestFlight signup form directly on the page with a `#signup` anchor
+- Header is simplified with just the centered logo (no navigation links)
 
 The site uses scoped CSS in `.astro` files. Components are self-contained with inline styles.
+
+Additional pages exist for potential future use (`about.astro`, `releases/`) but are not currently linked from the main navigation.
 
 ## Deployment
 
@@ -73,29 +60,19 @@ Site builds to `dist/` directory. Netlify configuration in `netlify.toml`:
 
 The `astro.config.mjs` sets `site: 'https://celestr.app'` for sitemap/SEO generation.
 
-## Content Management
-
-### Adding Release Notes
-
-1. Create `src/content/releases/vX.Y.Z.md`
-2. Add frontmatter with version, date, title, description, featured flag
-3. Write markdown content below frontmatter
-4. Deploy - new release automatically appears on `/releases`
-
-The release listing page (`src/pages/releases/index.astro`) uses `getCollection('releases')` and sorts by date. Individual pages use `getStaticPaths()` for pre-rendering at build time.
-
 ## Key Conventions
 
 - **TypeScript**: Project uses strict TypeScript mode
 - **Styling**: Scoped CSS within `.astro` files, not Tailwind (though setup guide mentions it as optional)
-- **iOS 26 context**: App targets iOS 26 Beta with "Liquid Glass" design language
-- **Beta timeline**: TestFlight expected August 2025, public release September 2025
-- **Forms**: Only one form currently - TestFlight waitlist signup
+- **Design language**: App emphasizes beautiful, native iOS design without specific version references
+- **Timeline**: Generic timeline messaging without specific dates
+- **Forms**: Only one form - TestFlight waitlist signup (appears on homepage with `#signup` anchor)
+- **Site structure**: Currently a single-page site. Additional pages exist but are not linked (can be added later)
 
 ## Project Context
 
 This is a pre-launch marketing site for an unreleased iOS app. Content emphasizes:
-- iOS 26 Liquid Glass design system
+- Beautiful, native iOS design
 - Premium/elegant positioning
-- TestFlight beta program for iOS 26 users
-- Fall 2025 launch timeline
+- TestFlight beta program
+- Generic launch timeline
