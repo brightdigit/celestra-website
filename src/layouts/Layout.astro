@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description = "Celestra - Premium RSS reader for iOS" } = Astro.props;
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'celestr.app';
 ---
 
 <!doctype html>
@@ -27,7 +28,7 @@ const { title, description = "Celestra - Premium RSS reader for iOS" } = Astro.p
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <script defer data-domain="celestr.app" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <Header />

@@ -8,5 +8,6 @@
 # Forms configuration
 [forms]
   # Email notifications when forms are submitted
+  # Set BETA_EMAIL environment variable in Netlify Dashboard
   [forms.testflight-signup]
-    to = "beta@celestr.app"
+    to = "${BETA_EMAIL}"
