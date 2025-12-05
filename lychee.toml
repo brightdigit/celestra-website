@@ -1,0 +1,15 @@
+# Lychee link checker configuration
+# Documentation: https://lychee.cli.rs/#/usage/config
+
+# Exclude patterns for URLs that should not be checked
+exclude = [
+  # Pre-launch domain - site not live yet
+  'https://celestr.app/*',
+
+  # Patreon blocks automated requests with 403 Forbidden
+  'https://www.patreon.com/*',
+
+  # Twitter/X.com often blocks bots
+  'https://twitter.com/*',
+  'https://x.com/*'
+]
