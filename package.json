@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lighthouse": "npm run build && lhci autorun --chrome-flags=\"--chrome-path=${CHROME_PATH:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}\""
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@lhci/cli": "^0.15.1",
+    "http-server": "^14.1.1",
     "typescript": "^5.7.2"
   }
 }

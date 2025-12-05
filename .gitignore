@@ -85,6 +85,9 @@ dist
 # Astro build cache
 .astro
 
+# Lighthouse CI reports
+.lighthouseci/
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
