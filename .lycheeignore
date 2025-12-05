@@ -1,6 +1,0 @@
-# Exclude celestr.app URLs until site is live
-# The domain doesn't respond yet since the site is in pre-launch
-https://celestr.app/*
-
-# Exclude Patreon - blocks automated requests with 403
-https://www.patreon.com/*
