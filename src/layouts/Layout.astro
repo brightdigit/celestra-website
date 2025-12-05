@@ -46,6 +46,8 @@ const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'celestr.app'
     --accent: 74, 163, 176;
     --accent-light: 178, 220, 225;
     --accent-dark: 36, 126, 138;
+    --link-color: #4338ca;
+    --link-hover-color: #3730a3;
   }
 
   * {
@@ -63,5 +65,18 @@ const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'celestr.app'
 
   main {
     min-height: 80vh;
+  }
+
+  /* Global link styles for accessibility */
+  a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+    text-decoration-thickness: 2px;
   }
 </style>
