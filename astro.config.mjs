@@ -11,4 +11,14 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
+
+  vite: {
+    server: {
+      allowedHosts: [
+        '.netlify.app',
+        'celestr.app',
+        'localhost',
+      ],
+    },
+  },
 });
