@@ -7,7 +7,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Celestra - Premium RSS reader for iOS 26" } = Astro.props;
+const { title, description = "Celestra - Premium RSS reader for iOS" } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,6 +19,14 @@ const { title, description = "Celestra - Premium RSS reader for iOS 26" } = Astr
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="Celestra" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body>
     <Header />

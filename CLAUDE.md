@@ -56,7 +56,7 @@ Additional pages exist for potential future use (`about.astro`, `releases/`) but
 Site builds to `dist/` directory. Netlify configuration in `netlify.toml`:
 - Build command: `npm run build`
 - Publish directory: `dist`
-- Node version: 20
+- Node version: 22
 
 The `astro.config.mjs` sets `site: 'https://celestr.app'` for sitemap/SEO generation.
 
