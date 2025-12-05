@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestFlightForm from '../components/TestFlightForm.astro';
+---
+
+<Layout title="Celestra - Premium RSS Reader for iOS">
+  <section class="hero" id="signup">
+    <div class="container">
+      <h1>Your RSS Feeds, Beautifully Reimagined</h1>
+      <p class="tagline">
+        Experience the future of RSS reading with beautiful, elegant design.
+        Premium, private, and built for those who value exceptional design.
+      </p>
+      <div class="form-wrapper">
+        <TestFlightForm />
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Designed for iOS</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Beautiful Design</h3>
+          <p>Immersive interfaces that feel native and delightful to use.</p>
+        </div>
+        <div class="feature">
+          <h3>Offline First</h3>
+          <p>Read anywhere with intelligent caching and iCloud sync.</p>
+        </div>
+        <div class="feature">
+          <h3>Premium Experience</h3>
+          <p>No ads, no tracking. Just pure reading bliss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 4rem 2rem 6rem;
+    text-align: center;
+    background: linear-gradient(135deg, #4AA3B0 0%, #2d7d88 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    margin: 0 0 3rem 0;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .features {
+    padding: 6rem 2rem;
+  }
+
+  .features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .feature {
+    text-align: center;
+  }
+
+  .feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

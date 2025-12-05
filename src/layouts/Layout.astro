@@ -1,0 +1,82 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Celestra - Premium RSS reader for iOS" } = Astro.props;
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'celestr.app';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="Celestra" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+    <script src="/scripts/email-obfuscation.js" defer></script>
+    <script src="/scripts/form-validation.js" defer></script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 74, 163, 176;
+    --accent-light: 178, 220, 225;
+    --accent-dark: 36, 126, 138;
+    --link-color: #4338ca;
+    --link-hover-color: #3730a3;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: #ffffff;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  main {
+    min-height: 80vh;
+  }
+
+  /* Global link styles for accessibility */
+  a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+    text-decoration-thickness: 2px;
+  }
+</style>

@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
+
+const betaEmail = import.meta.env.BETA_EMAIL || 'beta@celestr.app';
+---
+
+<Layout
+  title="Thank You - Celestra"
+  description="Thanks for joining the Celestra TestFlight waitlist"
+>
+  <div class="thank-you-container">
+    <div class="success-icon">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4AA3B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="success-icon-title">
+        <title id="success-icon-title">Success checkmark</title>
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M8 12l2 2 4-4"></path>
+      </svg>
+    </div>
+
+    <h1>You're on the List!</h1>
+
+    <p class="lead">
+      Thank you for joining the Celestra TestFlight waitlist.
+      We'll send you an invitation as soon as spots become available.
+    </p>
+
+    <div class="next-steps">
+      <h2>What Happens Next?</h2>
+      <ol>
+        <li>
+          <strong>Check Your Email</strong><br>
+          Look for a confirmation email from <ObfuscatedEmail email={betaEmail} />
+        </li>
+        <li>
+          <strong>Install TestFlight</strong><br>
+          If you haven't already, download the TestFlight app from the App Store
+        </li>
+        <li>
+          <strong>Watch for Your Invite</strong><br>
+          We'll send your beta invitation soon—keep an eye on your inbox
+        </li>
+      </ol>
+    </div>
+
+    <div class="additional-info">
+      <p>
+        In the meantime, follow us on social media for updates and sneak peeks
+        of features coming to Celestra.
+      </p>
+    </div>
+
+    <div class="actions">
+      <a href="/" class="button-primary">Return to Home</a>
+      <a href="/privacy" class="button-secondary">Privacy Policy</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .thank-you-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .success-icon {
+    margin: 0 auto 2rem;
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .next-steps {
+    background: #f9fafb;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .next-steps h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+    text-align: center;
+  }
+
+  .next-steps ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 0;
+  }
+
+  .next-steps li {
+    counter-increment: step-counter;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .next-steps li:last-child {
+    margin-bottom: 0;
+  }
+
+  .next-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #4AA3B0;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .next-steps li strong {
+    display: block;
+    color: #111;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .additional-info {
+    margin-bottom: 2.5rem;
+  }
+
+  .additional-info p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: #4AA3B0;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .button-primary:hover {
+    background: #3d8a95;
+    transform: translateY(-1px);
+  }
+
+  .button-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: white;
+    color: #4AA3B0;
+    border: 2px solid #4AA3B0;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .button-secondary:hover {
+    background: #4AA3B0;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .thank-you-container {
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+    }
+
+    .next-steps {
+      padding: 2rem 1.5rem;
+    }
+
+    .next-steps li {
+      padding-left: 2.5rem;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .button-primary,
+    .button-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
